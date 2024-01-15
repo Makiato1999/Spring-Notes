@@ -27,6 +27,12 @@ public class ProjectConfig {
         return veh;
     }
 
+    /*
+    @primary bean is the one which Spring will choose if it has multiple options and
+    you don't specify a name, in the other word, it is the default bean the sprig context
+    will consider in case of confusion due to multiple beans present of same type
+     */
+    @Primary
     @Bean(value = "bmwVehicle")
     Vehicle vehicle3() {
         var veh = new Vehicle();
