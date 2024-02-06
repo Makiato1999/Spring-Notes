@@ -59,5 +59,10 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
     - 使用原子变量：对于简单的计数器或标志，可以使用Java的原子变量类，如AtomicInteger或AtomicBoolean。
 - Eager & Lazy Initialization
   - Eager(默认)情况下，Spring IoC容器会在启动时立即创建并初始化所有的单例scope bean, lazy初始化会推迟bean的创建和初始化，直到第一次需要它时
-
-## Bean Scope<a name="anchor_4"></a>
+- Prototype Scope
+  ```
+  @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+  ```
+  当一个bean被定义为Prototype作用域时，Spring容器每次被请求时都会创建一个新的bean实例，按需创建的，不会在应用启动时就被创建。
+  
+## AOP<a name="anchor_4"></a>
