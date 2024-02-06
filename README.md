@@ -50,7 +50,14 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
   VehicleService类有两个依赖：Engine和Transmission。这两个依赖都是通过构造器注入到VehicleService类中的。
 
 ## Bean Scope<a name="anchor_3"></a>
-- Singleton (default)
-- Race condition
-- 
+在Spring框架中，默认情况下，bean是以单例（Singleton）作用域创建的。
+- Singleton(default) and Race condition
+  - 在单例bean的上下文中，如果bean包含了可变的共享数据，且没有适当的同步机制，当多个线程同时访问这个bean时，就可能会出现竞争条件。例如，如果你有一个计数器bean，它被多个线程用于增加计数，如果没有同步这些操作，最终的计数可能会因为竞争条件而错误。
+    - 同步：确保所有修改共享状态的方法都是同步的。你可以使用Java的同步关键字（synchronized），或者使用其他并发工具，如ReentrantLock。
+    - Spring作用域：如果可能，考虑将bean的作用域从单例更改为其他作用域，如请求或会话作用域。对于Web应用程序，每个HTTP请求可以有自己的bean实例（请求作用域），或者每个用户会话可以有自己的bean实例（会话作用域）。
+    - 使用并发集合：Java提供了一些线程安全的集合类，如ConcurrentHashMap，你可以使用这些集合来存储bean的状态，以减少需要自己进行同步的地方。
+    - 使用原子变量：对于简单的计数器或标志，可以使用Java的原子变量类，如AtomicInteger或AtomicBoolean。
+- Eager & Lazy Initialization
+  - Eager(默认)情况下，Spring IoC容器会在启动时立即创建并初始化所有的单例scope bean, lazy初始化会推迟bean的创建和初始化，直到第一次需要它时
 
+## Bean Scope<a name="anchor_4"></a>
