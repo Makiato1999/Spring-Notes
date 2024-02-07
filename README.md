@@ -5,6 +5,7 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 1. [stereotype](#anchor_1)<br/>
 2. [@Autowired Annotation](#anchor_2)<br/>
 3. [Bean Scope](#anchor_3)<br/>
+4. [Aspect-Oriented Programming](#anchor_4)<br/>
 
 ## stereotype<a name="anchor_1"></a>
 Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。这些注解提供了一种方便的方式来声明bean，并且通常还携带额外的元数据，让Spring容器能够识别和处理它们。
@@ -65,4 +66,4 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
   ```
   当一个bean被定义为Prototype作用域时，Spring容器每次被请求时都会创建一个新的bean实例，按需创建的，不会在应用启动时就被创建。
   
-## AOP<a name="anchor_4"></a>
+## Aspect-Oriented Programming<a name="anchor_4"></a>
