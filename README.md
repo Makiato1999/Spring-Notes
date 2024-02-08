@@ -67,3 +67,13 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
   当一个bean被定义为Prototype作用域时，Spring容器每次被请求时都会创建一个新的bean实例，按需创建的，不会在应用启动时就被创建。
   
 ## Aspect-Oriented Programming<a name="anchor_4"></a>
+AOP's ability to separate concerns that are not central to business logic from the main codebase can lead to more maintainable and less cluttered code.
+- Aspects: These are the modular units of cross-cutting concerns, such as logging, transaction management, or security.
+- Join Points:
+- Weaving
+- 增强（Advice）：切面在特定连接点采取的行动。有几种类型的增强：
+  - 前置增强（Before）：在连接点方法执行前运行。
+  - 后置增强（After）：无论其结果如何，在连接点方法执行后运行。
+  - 返回后增强（After-returning）：在连接点方法成功返回后运行。
+  - 异常后增强（After-throwing）：在连接点方法通过抛出异常退出后运行。
+  - 环绕增强（Around）：代替连接点方法运行，并能决定是否继续执行原方法。
