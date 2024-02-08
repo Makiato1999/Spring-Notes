@@ -9,6 +9,7 @@ import org.example.services.VehicleServices;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Assignment1 {
+    // @Autowired
     public static void main(String[] args) {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
