@@ -77,3 +77,41 @@ AOP's ability to separate concerns that are not central to business logic from t
   - 返回后增强（After-returning）：在连接点方法成功返回后运行。
   - 异常后增强（After-throwing）：在连接点方法通过抛出异常退出后运行。
   - 环绕增强（Around）：代替连接点方法运行，并能决定是否继续执行原方法。
+  
+  Example1: Logger Aspect，目的是打log记录状态
+  ```
+  @Aspect
+  @Component
+  @Order(2)
+  public class LoggerAspect {
+    @Around("execution(* com.example.services.*.*(..))")
+    public void log(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.getSignature().toString() + " method execution start");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info("Time took to execute the method : "+timeElapsed);
+        logger.info(joinPoint.getSignature().toString() + " method execution end");
+    }
+  }
+  ```
+  - @Around这个增强将围绕目标方法执行。
+  - 切入点（Pointcut），它匹配com.example.services包下的所有类和所有方法。
+  - ProceedingJoinPoint是JoinPoint的子接口，它额外提供了proceed()方法，专用于around类型的增强，可以在方法执行前后执行代码。
+  - joinPoint.proceed()就是执行方法
+
+  Example2: VehicleStartCheck Aspect，目的是检查汽车有无启动
+  ```
+  @Aspect
+  @Component
+  @Order(1)
+  public class VehicleStartCheckAspect {
+    @Before("execution(* com.example.services.*.*(..)) && args(vehicleStarted,..)")
+    public void checkVehicleStarted(JoinPoint joinPoint, boolean vehicleStarted) throws Throwable {
+        if(!vehicleStarted){
+            throw new RuntimeException("Vehicle not started");
+        }
+    }
+  }
+  ```
