@@ -69,7 +69,7 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
 ## Aspect-Oriented Programming<a name="anchor_4"></a>
 AOP's ability to separate concerns that are not central to business logic from the main codebase can lead to more maintainable and less cluttered code.
 - Aspects: These are the modular units of cross-cutting concerns, such as logging, transaction management, or security.
-- Join Points:
+- Join Points: 程序执行中的特定点，例如方法调用或字段访问操作，可以在这些点上应用切面。
 - Weaving
 - 增强（Advice）：切面在特定连接点采取的行动。有几种类型的增强：
   - 前置增强（Before）：在连接点方法执行前运行。
