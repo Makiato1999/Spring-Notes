@@ -96,7 +96,7 @@ AOP's ability to separate concerns that are not central to business logic from t
     }
   }
   ```
-  - @Around这个增强将围绕目标方法执行。
+  - @Around这个增强将围绕目标方法执行，匹配com.example.services包（及其子包）中任何方法执行
   - 切入点（Pointcut），它匹配com.example.services包下的所有类和所有方法。
   - ProceedingJoinPoint是JoinPoint的子接口，它额外提供了proceed()方法，专用于around类型的增强，可以在方法执行前后执行代码。
   - joinPoint.proceed()就是执行方法
@@ -115,3 +115,14 @@ AOP's ability to separate concerns that are not central to business logic from t
     }
   }
   ```
+  - @Order(1)：数字越小，aspect优先级越高。
+  - @Before：在连接点方法执行之前运行。
+  - Join Points 切入点表达式：
+    - execution(* com.example.services.*.*(..))：匹配com.example.services包及其子包中类的任何方法执行。*通配符匹配任何返回类型，..通配符匹配任意数量的参数。
+    - args(vehicleStarted,..)：进一步将匹配范围缩小到第一个参数是名为vehicleStarted的布尔参数的方法执行，此外还允许有任意数量的其他参数。
+  - JoinPoint：（这里并没有用，只是做了个汽车启动判定）
+    - 方法签名：JoinPoint.getSignature() 方法返回当前连接点执行的方法的签名信息，比如方法名称和返回类型。
+    - 方法参数：通过 JoinPoint.getArgs() 方法可以获取到方法调用时传递的参数。
+    - 目标对象：JoinPoint.getTarget() 方法允许你访问目标对象，即包含正在执行的方法的对象。
+    - 代理对象：如果你需要获取代理对象本身，可以使用 JoinPoint.getThis() 方法。
+- sss
