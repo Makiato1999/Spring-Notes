@@ -14,7 +14,8 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 ## Inversion of Control & Dependency Injection<a name="anchor_11"></a>
 IoC is a software design principle, Dependency Injection is the pattern through which Inversion of Control achieved.
   - the control flow of a program is inverted: instead of the programmer controlling the flow of a program, the framework or service takes control of the program flow.
-- Spring IoC container
+
+Spring IoC container
 
 ## stereotype<a name="anchor_12"></a>
 Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。这些注解提供了一种方便的方式来声明bean，并且通常还携带额外的元数据，让Spring容器能够识别和处理它们。
