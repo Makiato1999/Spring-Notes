@@ -3,21 +3,26 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 
 ### Table of Contents
 ##### Spring Core: Bean, depedency Injection, Inversion of Control, Aspect-Oriented Programming
-1. [stereotype](#anchor_11)<br/>
-2. [@Autowired Annotation](#anchor_12)<br/>
-3. [Bean Scope](#anchor_13)<br/>
-4. [Aspect-Oriented Programming](#anchor_14)<br/>
+1. [Inversion of Control & Dependency Injection](#anchor_11)<br/>
+2. [stereotype](#anchor_12)<br/>
+3. [@Autowired Annotation](#anchor_13)<br/>
+4. [Bean Scope](#anchor_14)<br/>
+5. [Aspect-Oriented Programming](#anchor_15)<br/>
 ##### Spring Web
 1. [stereotype](#anchor_21)<br/>
 
-## stereotype<a name="anchor_11"></a>
+## Inversion of Control & Dependency Injection<a name="anchor_11"></a>
+IoC is a software design principle, Dependency Injection is the pattern through which Inversion of Control achieved.
+- Spring IoC container
+
+## stereotype<a name="anchor_12"></a>
 Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。这些注解提供了一种方便的方式来声明bean，并且通常还携带额外的元数据，让Spring容器能够识别和处理它们。
 - @Component: 这是最通用的stereotype注解，它表明一个类被Spring框架视为组件。当使用类路径扫描时，Spring会自动找到这些注解，并注册它们为bean。
 - @Service: 这个注解是@Component的特化，它用于标注服务层的组件。在语义层面上，它表示这个类提供了一种业务服务。
 - @Repository: 这个注解是@Component的特化，用于标注数据访问对象（DAO），即那些提供了数据访问操作的类。它也可以帮助Spring提供数据访问时的特定功能，如异常翻译。
 - @Controller: 用于标注控制器组件，特别是在Spring MVC模式中，这个注解定义了一个类作为请求的处理器。
 
-## @Autowired Annotation <a name="anchor_12"></a>
+## @Autowired Annotation <a name="anchor_13"></a>
 在设置器方法上使用@Autowired注解来告知Spring这个方法应该被用来依赖注入。
 - Field Injection
   ```
@@ -53,7 +58,7 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
   ```
   VehicleService类有两个依赖：Engine和Transmission。这两个依赖都是通过构造器注入到VehicleService类中的。
 
-## Bean Scope<a name="anchor_13"></a>
+## Bean Scope<a name="anchor_14"></a>
 在Spring框架中，默认情况下，bean是以单例（Singleton）作用域创建的。
 - Singleton(default) and Race condition
   - 在单例bean的上下文中，如果bean包含了可变的共享数据，且没有适当的同步机制，当多个线程同时访问这个bean时，就可能会出现竞争条件。例如，如果你有一个计数器bean，它被多个线程用于增加计数，如果没有同步这些操作，最终的计数可能会因为竞争条件而错误。
@@ -69,7 +74,7 @@ Stereotype（原型）注解是一组用于定义Spring管理的bean的注解。
   ```
   当一个bean被定义为Prototype作用域时，Spring容器每次被请求时都会创建一个新的bean实例，按需创建的，不会在应用启动时就被创建。
   
-## Aspect-Oriented Programming<a name="anchor_14"></a>
+## Aspect-Oriented Programming<a name="anchor_15"></a>
 AOP's ability to separate concerns that are not central to business logic from the main codebase can lead to more maintainable and less cluttered code.
 - Aspects: These are the modular units of cross-cutting concerns, such as logging, transaction management, or security.
 - Join Points: 程序执行中的特定点，例如方法调用或字段访问操作，可以在这些点上应用切面。
