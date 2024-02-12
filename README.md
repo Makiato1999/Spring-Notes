@@ -13,6 +13,7 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 
 ## Inversion of Control & Dependency Injection<a name="anchor_11"></a>
 IoC is a software design principle, Dependency Injection is the pattern through which Inversion of Control achieved.
+  - the control flow of a program is inverted: instead of the programmer controlling the flow of a program, the framework or service takes control of the program flow.
 - Spring IoC container
 
 ## stereotype<a name="anchor_12"></a>
