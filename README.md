@@ -8,6 +8,7 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 3. [@Autowired Annotation](#anchor_13)<br/>
 4. [Bean Scope](#anchor_14)<br/>
 5. [Aspect-Oriented Programming](#anchor_15)<br/>
+6. [Issues: H2 database connection](#anchor_16)<br/>
 ##### Spring Web
 1. [stereotype](#anchor_21)<br/>
 
@@ -136,3 +137,9 @@ AOP's ability to separate concerns that are not central to business logic from t
     - 目标对象：JoinPoint.getTarget() 方法允许你访问目标对象，即包含正在执行的方法的对象。
     - 代理对象：如果你需要获取代理对象本身，可以使用 JoinPoint.getThis() 方法。
 - sss
+
+## Issues: H2 database connection<a name="anchor_16"></a>
+In Example_32, I use Spring Boot 3.2.2 and Spring Security 6
+- Issue: "access to the H2-console is denied, get 403 back"
+  - refer to [https://github.com/spring-projects/spring-security/issues/12546](spring-security)
+3. ""
