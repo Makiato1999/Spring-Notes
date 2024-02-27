@@ -34,7 +34,7 @@ public class ProjectSecurityConfig {
          */
         // We can disable the same for now and enable it ni the coming sections when we started generating CSRF tokens.
         MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
-        /* for testing H2-console
+        /* for testing H2-console, spring boot 2.22, spring security 6
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll()
@@ -121,7 +121,7 @@ public class ProjectSecurityConfig {
         UserDetails admin = users
                 .username("admin")
                 .password("54321")
-                .roles("USER", "ADMIN")
+                .roles("ADMIN")
                 .build();
 
         return new InMemoryUserDetailsManager(user, admin);
