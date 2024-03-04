@@ -16,6 +16,7 @@ import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -59,4 +60,20 @@ public class ContactService {
     }
 
      */
+
+    public List<Contact> findMsgWithOpenStatus() {
+        List<Contact> contactMsgs = contactRepository.findMsgWithStatus(EasySchoolConstants.OPEN);
+        return contactMsgs;
+    }
+
+    public boolean updateMsgStatus(int contactID, String updateBy) {
+        boolean isUpdated = false;
+        int result = contactRepository.updateMsgStatus(contactID, EasySchoolConstants.CLOSE, updateBy);
+        // 如果返回值是0，则没有记录被更新。这可能是因为没有找到匹配CONTACT_ID的记录。
+        // 如果返回值是1或更大的数字，这意味着相应数量的记录已经被成功更新。通常情况下，基于CONTACT_ID更新应该只影响一条记录，因为ID通常是唯一的。
+        if (result > 0) {
+            isUpdated = true;
+        }
+        return isUpdated;
+    }
 }

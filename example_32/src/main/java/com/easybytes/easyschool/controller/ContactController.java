@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
+import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Slf4j
@@ -58,8 +62,6 @@ public class ContactController {
 
         contactService.saveMessageDetails(contact);
 
-
-
         /*
         contactService.setCounter(contactService.getCounter() + 1);
         log.info("Number of times the Contact form is submitted : "+contactService.getCounter());
@@ -67,5 +69,21 @@ public class ContactController {
          */
 
         return "redirect:/contact";
+    }
+
+    @RequestMapping(value = "/displayMessages", method = GET)
+    public ModelAndView displayMessage(Model model) {
+        List<Contact> contactMsgs = contactService.findMsgWithOpenStatus();
+        ModelAndView modelAndView = new ModelAndView("messages.html");
+        modelAndView.addObject("contactMsgs", contactMsgs);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/closeMsg", method = GET)
+    public String closeMsg(@RequestParam int id, Authentication authentication) {
+        contactService.updateMsgStatus(id, authentication.getName());
+        // 使用Authentication获取当前用户：Authentication authentication参数允许方法访问当前认证的用户的信息。
+        // 在这个上下文中，authentication.getName()会获取当前用户的用户名，这通常用于确定是哪个用户执行了关闭消息的操作。
+        return "redirect:/displayMessages";
     }
 }
