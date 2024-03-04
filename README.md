@@ -9,6 +9,7 @@ _provided by Eazy Bytes, Madan Reddy on Udemy platform_ <br><br>
 4. [Bean Scope](#anchor_14)<br/>
 5. [Aspect-Oriented Programming](#anchor_15)<br/>
 6. [Issues: H2 database connection](#anchor_16)<br/>
+7. [MySQL on AWS](#anchor_17)<br/>
 ##### Spring Web
 1. [stereotype](#anchor_21)<br/>
 
@@ -143,3 +144,8 @@ In Example_32, I use Spring Boot 3.2.2 and Spring Security 6
 - Issue: "access to the H2-console is denied, get 403 back"
   - refer to [https://github.com/spring-projects/spring-security/issues/12546](spring-security)
 3. ""
+
+## MySQL on AWS<a name="anchor_17"></a>
+credential settings
+- master username: ```admin```
+- master password: ```MySQLspring```
