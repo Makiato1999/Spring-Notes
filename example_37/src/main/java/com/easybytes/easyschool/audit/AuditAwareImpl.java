@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+/*
 @Component("auditAwareImpl")
 public class AuditAwareImpl implements AuditorAware<String> {
     @Override
@@ -21,3 +22,14 @@ public class AuditAwareImpl implements AuditorAware<String> {
 // 这个实现允许你在使用Spring Data JPA时，
 // 自动将当前认证用户的名字作为创建者或更新者信息填充到实体的@CreatedBy和@LastModifiedBy字段。
 // 这样，每当实体被创建或更新时，你都可以轻松跟踪是哪个用户进行了操作。这对于实现审计日志、追踪数据变更历史等功能非常有用。
+*/
+
+
+@Component("auditAwareImpl")
+public class AuditAwareImpl implements AuditorAware<String> {
+
+    @Override
+    public Optional<String> getCurrentAuditor() {
+        return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication().getName());
+    }
+}

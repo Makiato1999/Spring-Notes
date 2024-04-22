@@ -1,6 +1,7 @@
 package com.easybytes.easyschool.controller;
 
 import com.easybytes.easyschool.model.Person;
+import com.easybytes.easyschool.service.PersonService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("public")
 public class PublicController {
-    //@Autowired
-    //PersonService personService;
+    @Autowired
+    PersonService personService;
 
     @RequestMapping(value = "/register", method = {RequestMethod.GET})
     public String displayRegisterPage(Model model) {
@@ -30,6 +31,14 @@ public class PublicController {
         if (errors.hasErrors()) {
             return "register.html";
         }
+        boolean isSaved = personService.createNewPerson(person);
+        if (isSaved) {
+            return "redirect:/login?register=true";
+        } else {
+            return "register.html";
+        }
+        /* before example 37
         return "redirect:/login?register=true";
+         */
     }
 }

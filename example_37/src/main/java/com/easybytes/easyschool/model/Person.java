@@ -9,7 +9,6 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.data.annotation.Transient;
 
 @Data
 @Entity
@@ -25,6 +24,9 @@ import org.springframework.data.annotation.Transient;
                 message = "Email address do not match!"
         )
 })
+// 如果数据库中的表名正好与实体类的名称相同（考虑到数据库是不区分大小写的，但习惯上实体名是驼峰式，表名是小写），
+// 并且你没有特殊的映射需求（如指定目录或架构），那么@Table注解可以省略。
+// 例如，如果你有一个Customer实体和一个名为customer的表，那么不需要@Table注解。
 public class Person extends BaseEntity {
         @Id
         @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
@@ -45,7 +47,8 @@ public class Person extends BaseEntity {
 
         @NotBlank(message="Confirm Email must not be blank")
         @Email(message = "Please provide a valid confirm email address" )
-        @Transient// 表示该字段不是数据库表的一部分，通常用于临时存储，比如确认密码和确认邮箱，这些值不需要持久化到数据库。
+        // 表示该字段不是数据库表的一部分，通常用于临时存储，比如确认密码和确认邮箱，这些值不需要持久化到数据库。
+        @Transient
         private String confirmEmail;
 
         @NotBlank(message="Password must not be blank")
@@ -55,7 +58,8 @@ public class Person extends BaseEntity {
 
         @NotBlank(message="Confirm Password must not be blank")
         @Size(min=5, message="Confirm Password must be at least 5 characters long")
-        @Transient// 表示该字段不是数据库表的一部分，通常用于临时存储，比如确认密码和确认邮箱，这些值不需要持久化到数据库。
+        // 表示该字段不是数据库表的一部分，通常用于临时存储，比如确认密码和确认邮箱，这些值不需要持久化到数据库。
+        @Transient
         private String confirmPwd;
 
         @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST, targetEntity = Roles.class)
