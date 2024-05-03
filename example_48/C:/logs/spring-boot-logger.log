@@ -1,0 +1,70 @@
+2024-05-02 21:27:45,240 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-05-02 21:27:45,288 INFO o.s.b.StartupInfoLogger [restartedMain] Starting EasyschoolApplication using Java 19.0.1 with PID 59739 (/Users/xiexiaoran/Documents/GitHub/Spring-Notes/example_48/target/classes started by xiexiaoran in /Users/xiexiaoran/Documents/GitHub/Spring-Notes/example_48)
+2024-05-02 21:27:45,289 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:27:45,390 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-02 21:27:45,461 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-02 21:27:46,641 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-02 21:27:46,713 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 58 ms. Found 7 JPA repository interfaces.
+2024-05-02 21:27:47,852 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-05-02 21:27:47,863 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-02 21:27:47,865 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-05-02 21:27:47,865 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-05-02 21:27:47,905 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-05-02 21:27:47,906 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2327 ms
+2024-05-02 21:27:48,171 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-05-02 21:27:49,008 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e5e09f5
+2024-05-02 21:27:49,011 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-05-02 21:27:49,059 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-02 21:27:49,124 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-05-02 21:27:49,130 WARN o.h.j.b.i.EntityManagerFactoryBuilderImpl [restartedMain] HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2024-05-02 21:27:49,159 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-05-02 21:27:49,375 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-02 21:27:50,597 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-02 21:27:50,809 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-02 21:27:51,474 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-02 21:27:51,579 WARN o.s.d.j.r.q.NamedQuery [restartedMain] Finder method public abstract org.springframework.data.domain.Page com.easybytes.easyschool.repository.ContactRepository.findOpenMsgs(java.lang.String,org.springframework.data.domain.Pageable) is backed by a NamedQuery but contains a Pageable parameter; Sorting delivered via this Pageable will not be applied
+2024-05-02 21:27:51,599 WARN o.s.d.j.r.q.NamedQuery [restartedMain] Finder method public abstract org.springframework.data.domain.Page com.easybytes.easyschool.repository.ContactRepository.findOpenMsgsNative(java.lang.String,org.springframework.data.domain.Pageable) is backed by a NamedQuery but contains a Pageable parameter; Sorting delivered via this Pageable will not be applied
+2024-05-02 21:27:51,737 INFO c.e.e.a.LoggerAspect [restartedMain] PasswordEncoder com.easybytes.easyschool.config.ProjectSecurityConfig.passwordEncoder() method execution start
+2024-05-02 21:27:51,739 INFO c.e.e.a.LoggerAspect [restartedMain] Time took to execute PasswordEncoder com.easybytes.easyschool.config.ProjectSecurityConfig.passwordEncoder() method is : 1
+2024-05-02 21:27:51,739 INFO c.e.e.a.LoggerAspect [restartedMain] PasswordEncoder com.easybytes.easyschool.config.ProjectSecurityConfig.passwordEncoder() method execution end
+2024-05-02 21:27:51,823 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-02 21:27:52,375 INFO c.e.e.a.LoggerAspect [restartedMain] void com.easybytes.easyschool.config.WebConfig.addViewControllers(ViewControllerRegistry) method execution start
+2024-05-02 21:27:52,377 INFO c.e.e.a.LoggerAspect [restartedMain] Time took to execute void com.easybytes.easyschool.config.WebConfig.addViewControllers(ViewControllerRegistry) method is : 1
+2024-05-02 21:27:52,377 INFO c.e.e.a.LoggerAspect [restartedMain] void com.easybytes.easyschool.config.WebConfig.addViewControllers(ViewControllerRegistry) method execution end
+2024-05-02 21:27:52,573 INFO c.e.e.a.LoggerAspect [restartedMain] SecurityFilterChain com.easybytes.easyschool.config.ProjectSecurityConfig.defaultSecurityFilterChain(HttpSecurity,HandlerMappingIntrospector) method execution start
+2024-05-02 21:27:52,654 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e43c9cb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4619be08, org.springframework.security.web.context.SecurityContextHolderFilter@41f6cfee, org.springframework.security.web.header.HeaderWriterFilter@330760d1, org.springframework.web.filter.CorsFilter@6ecd8332, org.springframework.security.web.csrf.CsrfFilter@44865b6, org.springframework.security.web.authentication.logout.LogoutFilter@16e90f73, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f717475, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@269eb4ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5481d212, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20efcb24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3da559ac, org.springframework.security.web.access.ExceptionTranslationFilter@3eb30873, org.springframework.security.web.access.intercept.AuthorizationFilter@2d67221c]
+2024-05-02 21:27:52,654 INFO c.e.e.a.LoggerAspect [restartedMain] Time took to execute SecurityFilterChain com.easybytes.easyschool.config.ProjectSecurityConfig.defaultSecurityFilterChain(HttpSecurity,HandlerMappingIntrospector) method is : 80
+2024-05-02 21:27:52,654 INFO c.e.e.a.LoggerAspect [restartedMain] SecurityFilterChain com.easybytes.easyschool.config.ProjectSecurityConfig.defaultSecurityFilterChain(HttpSecurity,HandlerMappingIntrospector) method execution end
+2024-05-02 21:27:53,706 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-05-02 21:27:53,727 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-05-02 21:27:53,745 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2024-05-02 21:27:53,754 INFO o.s.b.StartupInfoLogger [restartedMain] Started EasyschoolApplication in 9.093 seconds (process running for 11.286)
+2024-05-02 21:29:17,174 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-05-02 21:29:17,255 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-02 21:29:17,255 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-02 21:29:17,906 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-02 21:29:17,955 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 40 ms. Found 7 JPA repository interfaces.
+2024-05-02 21:29:18,996 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-05-02 21:29:19,006 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-02 21:29:19,008 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-05-02 21:29:19,009 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-05-02 21:29:19,043 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-05-02 21:29:19,043 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1787 ms
+2024-05-02 21:29:19,223 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-05-02 21:29:19,880 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47568317
+2024-05-02 21:29:19,883 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-05-02 21:29:19,930 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-02 21:29:20,005 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-05-02 21:29:20,012 WARN o.h.j.b.i.EntityManagerFactoryBuilderImpl [restartedMain] HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2024-05-02 21:29:20,040 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-05-02 21:29:20,255 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-02 21:29:21,305 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-02 21:29:21,509 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-02 21:29:22,145 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-02 21:29:22,245 WARN o.s.d.j.r.q.NamedQuery [restartedMain] Finder method public abstract org.springframework.data.domain.Page com.easybytes.easyschool.repository.ContactRepository.findOpenMsgs(java.lang.String,org.springframework.data.domain.Pageable) is backed by a NamedQuery but contains a Pageable parameter; Sorting delivered via this Pageable will not be applied
+2024-05-02 21:29:22,263 WARN o.s.d.j.r.q.NamedQuery [restartedMain] Finder method public abstract org.springframework.data.domain.Page com.easybytes.easyschool.repository.ContactRepository.findOpenMsgsNative(java.lang.String,org.springframework.data.domain.Pageable) is backed by a NamedQuery but contains a Pageable parameter; Sorting delivered via this Pageable will not be applied
+2024-05-02 21:29:22,469 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-02 21:29:23,254 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ff2a1a6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ddd9178, org.springframework.security.web.context.SecurityContextHolderFilter@1acbf74, org.springframework.security.web.header.HeaderWriterFilter@73efbe1, org.springframework.web.filter.CorsFilter@8685e02, org.springframework.security.web.csrf.CsrfFilter@71708a82, org.springframework.security.web.authentication.logout.LogoutFilter@32e13266, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f141289, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f41b909, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b214902, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3438cb26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a4337f7, org.springframework.security.web.access.ExceptionTranslationFilter@b983b8f, org.springframework.security.web.access.intercept.AuthorizationFilter@430980c]
+2024-05-02 21:29:23,888 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-05-02 21:29:23,923 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-05-02 21:29:23,945 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
